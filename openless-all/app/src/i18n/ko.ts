@@ -7,7 +7,7 @@ import { en } from './en';
 export const ko: typeof zhCN = {
   ...en,
   app: {
-    name: 'OpenLess',
+    name: 'Voice Input',
     tagline: '자연스럽게 말하고, 정확하게 작성하세요',
   },
   common: {
@@ -210,7 +210,7 @@ export const ko: typeof zhCN = {
     },
   },
   onboarding: {
-    welcome: 'OpenLess 에 오신 것을 환영합니다',
+    welcome: 'Voice Input 에 오신 것을 환영합니다',
     intro: '로컬에서 말하고 로컬에서 입력합니다. 시작 전에 두 가지 시스템 권한이 필요합니다.',
     accessibilityTitle: '접근성',
     hotkeyTitle: '전역 단축키',
@@ -223,8 +223,8 @@ export const ko: typeof zhCN = {
     actionOpenSystem: '시스템 설정 열기',
     actionGrant: '허용',
     actionRequestMic: '권한 대화상자 표시',
-    accessibilityHint: '허용 후에는 **OpenLess 를 완전히 종료** 한 다음 다시 실행해야 합니다(macOS TCC 규칙).',
-    footerHint: '모든 권한이 부여되면 이 가이드는 자동으로 닫힙니다. 닫히지 않으면 메뉴 막대의 OpenLess → 종료 후 앱을 다시 실행해 주세요.',
+    accessibilityHint: '허용 후에는 **Voice Input 를 완전히 종료** 한 다음 다시 실행해야 합니다(macOS TCC 규칙).',
+    footerHint: '모든 권한이 부여되면 이 가이드는 자동으로 닫힙니다. 닫히지 않으면 메뉴 막대의 Voice Input → 종료 후 앱을 다시 실행해 주세요.',
   },
   overview: {
     kicker: 'DASHBOARD',
@@ -418,7 +418,7 @@ export const ko: typeof zhCN = {
       fullPromptTitle: 'System Prompt',
       fullPromptHint: '이 팩만의 Prompt입니다.',
       promptChars: '{{count}}자',
-      runtimeTitle: 'OpenLess 런타임 추가 지시',
+      runtimeTitle: 'Voice Input 런타임 추가 지시',
       runtimeDesc: '읽기 전용 런타임 보조.',
       runtimeContextTitle: '컨텍스트 전제',
       runtimeContextDesc: '언어·앱 컨텍스트에서',
@@ -665,7 +665,7 @@ export const ko: typeof zhCN = {
       marketplaceDevLoginLabel: 'GitHub 로그인 이름 (업로드 ID)',
       marketplaceDevLoginDesc: '업로더를 식별합니다. 빈칸 시 업로드 및 좋아요 비활성화.',
       startupAtBoot: '부팅 시 자동 시작',
-      startupAtBootDesc: '로그인 시 OpenLess 자동 시작.',
+      startupAtBootDesc: '로그인 시 Voice Input 자동 시작.',
       startupAtBootError: '자동 시작 전환 실패: {{message}}',
     },
     providers: {
@@ -674,7 +674,7 @@ export const ko: typeof zhCN = {
       providerLabel: '공급자',
       llmProviderDesc: '선택 시 Base URL 기본값이 자동 입력됩니다.',
       credentialStorageNotice: '자격 증명은 OS 자격 증명 저장소에 보관됩니다.',
-      codexOAuthNotice: 'Codex OAuth는 로컬 Codex 로그인 상태(~/.codex/auth.json)를 사용합니다. OpenLess는 API Key나 Base URL을 저장하지 않습니다.',
+      codexOAuthNotice: 'Codex OAuth는 로컬 Codex 로그인 상태(~/.codex/auth.json)를 사용합니다. Voice Input는 API Key나 Base URL을 저장하지 않습니다.',
       asrProviderDesc: '전환 시 해당하는 자격 증명이 자동 선택됩니다.',
       asrTitle: 'ASR 음성(전사)',
       asrDesc: '구술을 실시간으로 텍스트로 전사합니다.',
@@ -766,7 +766,7 @@ export const ko: typeof zhCN = {
       cancel: '이번 녹음 취소',
       confirm: '캡슐 입력 확정',
       switchStyle: '이전 스타일로 전환',
-      openApp: 'OpenLess 열기',
+      openApp: 'Voice Input 열기',
       agentPolish: '선택 텍스트 다듬기',
       agentPolishDesc: '텍스트 선택 → 키 → Claude 다듬기 → 선택 영역 교체.',
       agentVoice: 'Less Computer',
@@ -780,8 +780,8 @@ export const ko: typeof zhCN = {
     },
     permissions: {
       title: '권한',
-      descAcc: 'OpenLess 가 정상 작동하려면 다음 시스템 권한이 필요합니다. 허용 후에는 일반적으로 앱을 완전히 종료한 후 재시작해야 적용됩니다.',
-      descNoAcc: 'OpenLess 는 마이크 사용과 전역 단축키 감지 상태를 통해 네이티브 후크의 정상 동작을 판정해야 합니다.',
+      descAcc: 'Voice Input 가 정상 작동하려면 다음 시스템 권한이 필요합니다. 허용 후에는 일반적으로 앱을 완전히 종료한 후 재시작해야 적용됩니다.',
+      descNoAcc: 'Voice Input 는 마이크 사용과 전역 단축키 감지 상태를 통해 네이티브 후크의 정상 동작을 판정해야 합니다.',
       micLabel: '마이크',
       micDesc: '음성 입력을 캡처하기 위해 사용합니다.',
       accLabel: '접근성',
@@ -804,13 +804,13 @@ export const ko: typeof zhCN = {
       hotkeyStarting: '설치 중…',
       hotkeyFailed: '감지 실패',
       windowsImeLabel: 'Windows 입력기 백엔드',
-      windowsImeDesc: '음성 세션 동안 OpenLess TSF 입력기로 일시적으로 전환하여 클립보드 입력 제한을 회피하기 위해 사용.',
+      windowsImeDesc: '음성 세션 동안 Voice Input TSF 입력기로 일시적으로 전환하여 클립보드 입력 제한을 회피하기 위해 사용.',
       windowsImeInstalled: '설치됨',
       windowsImeUnavailable: '사용 불가',
       windowsIme: {
-        installed: '설치됨. 음성 입력 시 OpenLess 입력기로 일시 전환됩니다.',
-        notInstalled: '설치되지 않음. OpenLess 는 현재 클립보드 / WM_PASTE 폴백을 사용합니다.',
-        registrationBroken: '등록이 손상되었습니다. OpenLess 입력기를 재설치하세요.',
+        installed: '설치됨. 음성 입력 시 Voice Input 입력기로 일시 전환됩니다.',
+        notInstalled: '설치되지 않음. Voice Input 는 현재 클립보드 / WM_PASTE 폴백을 사용합니다.',
+        registrationBroken: '등록이 손상되었습니다. Voice Input 입력기를 재설치하세요.',
         notWindows: 'Windows 만 사용 가능.',
       },
     },
@@ -911,19 +911,19 @@ export const ko: typeof zhCN = {
       updateDialog: {
         available: {
           title: '새 버전 발견',
-          desc: 'OpenLess {{version}} 을(를) 발견했습니다. 지금 업데이트하시겠습니까?',
+          desc: 'Voice Input {{version}} 을(를) 발견했습니다. 지금 업데이트하시겠습니까?',
         },
         downloading: {
           title: '업데이트 다운로드 중',
-          desc: 'OpenLess {{version}} 을(를) 다운로드 중입니다. 앱을 열어 두세요.',
+          desc: 'Voice Input {{version}} 을(를) 다운로드 중입니다. 앱을 열어 두세요.',
         },
         downloaded: {
           title: '업데이트 준비 완료',
-          desc: 'OpenLess {{version}} 설치가 완료되었습니다. 지금 자동 재시작하여 적용하시겠습니까?',
+          desc: 'Voice Input {{version}} 설치가 완료되었습니다. 지금 자동 재시작하여 적용하시겠습니까?',
         },
         installing: {
           title: '업데이트 설치 중',
-          desc: 'OpenLess {{version}} 을(를) 설치 중입니다. 앱을 열어 두세요.',
+          desc: 'Voice Input {{version}} 을(를) 설치 중입니다. 앱을 열어 두세요.',
         },
         install: '지금 업데이트',
         downloadingLabel: '다운로드 중…',

@@ -3,7 +3,7 @@
 
 export const zhCN = {
   app: {
-    name: 'OpenLess',
+    name: 'Voice Input',
     tagline: '自然说话，完美书写',
   },
   common: {
@@ -206,7 +206,7 @@ export const zhCN = {
     },
   },
   onboarding: {
-    welcome: '欢迎使用 OpenLess',
+    welcome: '欢迎使用 Voice Input',
     intro: '本地说出，本地落字。开始前需要两个系统权限。',
     accessibilityTitle: '辅助功能',
     hotkeyTitle: '全局快捷键',
@@ -219,8 +219,8 @@ export const zhCN = {
     actionOpenSystem: '打开系统设置',
     actionGrant: '授权',
     actionRequestMic: '弹出授权',
-    accessibilityHint: '授权后必须**完全退出 OpenLess** 再重新打开（macOS TCC 规则）。',
-    footerHint: '授权全部完成后此引导自动关闭。如果一直不消失，从菜单栏 OpenLess → 退出，重新打开 App。',
+    accessibilityHint: '授权后必须**完全退出 Voice Input** 再重新打开（macOS TCC 规则）。',
+    footerHint: '授权全部完成后此引导自动关闭。如果一直不消失，从菜单栏 Voice Input → 退出，重新打开 App。',
   },
   overview: {
     kicker: 'DASHBOARD',
@@ -414,7 +414,7 @@ export const zhCN = {
       fullPromptTitle: 'System Prompt',
       fullPromptHint: '这就是这套风格包自己的 Prompt。',
       promptChars: '{{count}} 字符',
-      runtimeTitle: 'OpenLess 运行时附加指令',
+      runtimeTitle: 'Voice Input 运行时附加指令',
       runtimeDesc: '只读的运行时辅助项。',
       runtimeContextTitle: '上下文前提',
       runtimeContextDesc: '来自语言与应用上下文',
@@ -661,7 +661,7 @@ export const zhCN = {
       marketplaceDevLoginLabel: 'GitHub 用户名（上传身份）',
       marketplaceDevLoginDesc: '标识上传者身份，为空时无法上传或点赞。',
       startupAtBoot: '开机自启',
-      startupAtBootDesc: '登录系统时自动启动 OpenLess。',
+      startupAtBootDesc: '登录系统时自动启动 Voice Input。',
       startupAtBootError: '开机自启切换失败：{{message}}',
     },
     providers: {
@@ -670,7 +670,7 @@ export const zhCN = {
       providerLabel: '供应商',
       llmProviderDesc: '选择后将自动填入 Base URL 默认值。',
       credentialStorageNotice: '凭据保存在系统凭据库中。',
-      codexOAuthNotice: 'Codex OAuth 使用本机 Codex 登录状态（~/.codex/auth.json），无需在 OpenLess 中保存 API Key 或 Base URL。',
+      codexOAuthNotice: 'Codex OAuth 使用本机 Codex 登录状态（~/.codex/auth.json），无需在 Voice Input 中保存 API Key 或 Base URL。',
       asrProviderDesc: '切换后将自动选用对应凭据。',
       asrTitle: 'ASR 语音（转写）',
       asrDesc: '用于将口述实时转写为文本。',
@@ -762,7 +762,7 @@ export const zhCN = {
       cancel: '取消本次录音',
       confirm: '胶囊确认插入',
       switchStyle: '切换到上一个风格',
-      openApp: '打开 OpenLess',
+      openApp: '打开 Voice Input',
       agentPolish: '选中文本润色',
       agentPolishDesc: '选中文本 → 按键 → Claude 润色 → 替换选区。',
       agentVoice: 'Less Computer',
@@ -776,7 +776,7 @@ export const zhCN = {
     },
     permissions: {
       title: '权限',
-      descAcc: 'OpenLess 需要以下系统权限。授权后通常要完全退出 App 重启一次才生效。',
+      descAcc: 'Voice Input 需要以下系统权限。授权后通常要完全退出 App 重启一次才生效。',
       descNoAcc: '麦克风必需；全局快捷键状态用来检测 native hook 是否运行。',
       micLabel: '麦克风',
       micDesc: '用于捕获你的语音输入。',
@@ -800,13 +800,13 @@ export const zhCN = {
       hotkeyStarting: '安装中…',
       hotkeyFailed: '监听失败',
       windowsImeLabel: 'Windows 输入法后端',
-      windowsImeDesc: '语音输入时临时切到 OpenLess TSF，绕过剪贴板限制。',
+      windowsImeDesc: '语音输入时临时切到 Voice Input TSF，绕过剪贴板限制。',
       windowsImeInstalled: '已安装',
       windowsImeUnavailable: '不可用',
       windowsIme: {
-        installed: '已安装，按需切到 OpenLess 输入法。',
+        installed: '已安装，按需切到 Voice Input 输入法。',
         notInstalled: '未安装，走剪贴板 / WM_PASTE 兜底。',
-        registrationBroken: '注册损坏，请重装 OpenLess 输入法。',
+        registrationBroken: '注册损坏，请重装 Voice Input 输入法。',
         notWindows: '仅 Windows 可用。',
       },
     },
@@ -907,19 +907,19 @@ export const zhCN = {
       updateDialog: {
         available: {
           title: '发现新版本',
-          desc: '发现 OpenLess {{version}}，是否现在更新？',
+          desc: '发现 Voice Input {{version}}，是否现在更新？',
         },
         downloading: {
           title: '正在下载更新',
-          desc: '正在下载 OpenLess {{version}}，请保持应用打开。',
+          desc: '正在下载 Voice Input {{version}}，请保持应用打开。',
         },
         downloaded: {
           title: '更新已准备好',
-          desc: 'OpenLess {{version}} 已安装完成。是否现在自动重启以应用更新？',
+          desc: 'Voice Input {{version}} 已安装完成。是否现在自动重启以应用更新？',
         },
         installing: {
           title: '正在安装更新',
-          desc: '正在安装 OpenLess {{version}}，请保持应用打开。',
+          desc: '正在安装 Voice Input {{version}}，请保持应用打开。',
         },
         install: '现在更新',
         downloadingLabel: '下载中…',

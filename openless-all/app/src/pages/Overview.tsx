@@ -60,7 +60,7 @@ export function Overview({ onOpenHistory }: OverviewProps) {
   const [credsError, setCredsError] = useState(false);
   const [creds, setCreds] = useState<CredentialsStatus>({
     activeAsrProvider: 'volcengine',
-    activeLlmProvider: 'ark',
+    activeLlmProvider: 'deepseek',
     asrConfigured: false,
     llmConfigured: false,
     volcengineConfigured: false,
@@ -159,7 +159,7 @@ export function Overview({ onOpenHistory }: OverviewProps) {
   }, [history]);
 
   const asrProviderId = creds.activeAsrProvider || 'volcengine';
-  const llmProviderId = creds.activeLlmProvider || 'ark';
+  const llmProviderId = creds.activeLlmProvider || 'deepseek';
   const asrNameKey = ASR_NAME_KEY_BY_ID[asrProviderId];
   const llmNameKey = LLM_NAME_KEY_BY_ID[llmProviderId];
   const asrProviderName = asrNameKey

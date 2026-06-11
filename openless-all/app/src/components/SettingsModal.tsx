@@ -39,8 +39,8 @@ interface ModalNavItem {
   href?: string;
 }
 
-const HELP_URL = 'https://github.com/appergb/openless#readme';
-const RELEASE_NOTES_URL = 'https://github.com/appergb/openless/releases';
+const HELP_URL = 'https://github.com/nickwun/voice-input#readme';
+const RELEASE_NOTES_URL = 'https://github.com/nickwun/voice-input/releases';
 
 // 第一组：可选中的 tab；第二组：外部链接（永远不 active）。
 const TAB_ITEMS: ModalNavItem[] = [

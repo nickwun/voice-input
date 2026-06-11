@@ -53,7 +53,7 @@ use std::time::Duration;
 
 const LOG_ROTATE_LIMIT_BYTES: u64 = 10 * 1024 * 1024;
 #[cfg(target_os = "macos")]
-const OPENLESS_BUNDLE_ID: &str = "com.openless.app";
+const OPENLESS_BUNDLE_ID: &str = "com.nickwun.voice-input";
 
 /// 第一次 show 时把 QA 浮窗摆到屏幕底部居中；之后的 show 不再 reposition，
 /// 让用户拖动后的位置在 hide → show 之间得以保持。详见 issue #118 v2。
@@ -598,7 +598,7 @@ fn build_tray_menu<M: Manager<tauri::Wry>>(
 ) -> tauri::Result<TrayMenu> {
     let toggle = MenuItemBuilder::with_id("toggle", "显示主窗口").build(app)?;
     let microphone_menu = build_microphone_tray_menu(app, coordinator)?;
-    let quit = MenuItemBuilder::with_id("quit", "退出 OpenLess").build(app)?;
+    let quit = MenuItemBuilder::with_id("quit", "退出 Voice Input").build(app)?;
     let mut builder = MenuBuilder::new(app);
     let style_menu = if tray_style_menu_enabled() {
         Some(build_style_tray_menu(app, coordinator)?)

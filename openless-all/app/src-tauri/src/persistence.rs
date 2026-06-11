@@ -587,7 +587,7 @@ fn creds_default_asr() -> String {
     }
 }
 fn creds_default_llm() -> String {
-    "ark".into()
+    "deepseek".into()
 }
 
 #[derive(Debug, Serialize, Deserialize, Default, Clone)]

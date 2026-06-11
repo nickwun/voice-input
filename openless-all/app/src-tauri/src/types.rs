@@ -364,7 +364,7 @@ pub fn builtin_style_pack_id(mode: PolishMode) -> &'static str {
 }
 
 pub fn default_active_style_pack_id() -> String {
-    BUILTIN_STYLE_PACK_LIGHT_ID.to_string()
+    BUILTIN_STYLE_PACK_STRUCTURED_ID.to_string()
 }
 
 pub fn builtin_style_pack_for_mode(mode: PolishMode) -> StylePack {
@@ -907,7 +907,7 @@ struct UserPreferencesWire {
     streaming_insert_default_migrated: bool,
     #[serde(default = "default_true")]
     streaming_insert_save_clipboard: bool,
-    #[serde(default = "default_true")]
+    #[serde(default)]
     auto_update_check: bool,
     #[serde(default)]
     history_max_entries: Option<u32>,
@@ -1779,7 +1779,7 @@ impl Default for UserPreferences {
             audio_cue_on_record: true,
             microphone_device_name: String::new(),
             active_asr_provider: default_active_asr_provider(),
-            active_llm_provider: "ark".into(),
+            active_llm_provider: "deepseek".into(),
             llm_thinking_enabled: false,
             restore_clipboard_after_paste: true,
             paste_shortcut: PasteShortcut::default(),
@@ -1820,7 +1820,7 @@ impl Default for UserPreferences {
             streaming_insert: true,
             streaming_insert_default_migrated: true,
             streaming_insert_save_clipboard: true,
-            auto_update_check: true,
+            auto_update_check: false,
             history_max_entries: None,
             record_audio_for_debug: false,
             audio_recording_max_entries: None,

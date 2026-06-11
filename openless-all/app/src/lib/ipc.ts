@@ -82,8 +82,8 @@ let mockSettings: UserPreferences = {
     muteDuringRecording: false,
     audioCueOnRecord: true,
     microphoneDeviceName: "",
-    activeAsrProvider: "foundry-local-whisper",
-    activeLlmProvider: "ark",
+    activeAsrProvider: "volcengine",
+    activeLlmProvider: "deepseek",
     llmThinkingEnabled: false,
     restoreClipboardAfterPaste: true,
     pasteShortcut: "ctrlV",
@@ -126,7 +126,7 @@ let mockSettings: UserPreferences = {
     streamingInsert: true,
     streamingInsertDefaultMigrated: true,
     streamingInsertSaveClipboard: true,
-    autoUpdateCheck: true,
+    autoUpdateCheck: false,
     historyMaxEntries: null,
     recordAudioForDebug: false,
     audioRecordingMaxEntries: null,
@@ -436,8 +436,8 @@ const mockHotkeyCapability: HotkeyCapability = {
 }
 
 const mockCredentialsStatus: CredentialsStatus = {
-    activeAsrProvider: "foundry-local-whisper",
-    activeLlmProvider: "ark",
+    activeAsrProvider: "volcengine",
+    activeLlmProvider: "deepseek",
     asrConfigured: true,
     llmConfigured: true,
     volcengineConfigured: true,

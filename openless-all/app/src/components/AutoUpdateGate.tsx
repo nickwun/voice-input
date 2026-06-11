@@ -12,7 +12,7 @@ const STARTUP_DELAY_MS = 4_000;
 export function AutoUpdateGate() {
   const { prefs } = useHotkeySettings();
   const u = useAutoUpdate();
-  const enabled = prefs?.autoUpdateCheck ?? true;
+  const enabled = prefs?.autoUpdateCheck ?? false;
 
   // 用 ref 保持 tick 闭包始终读到最新的 useAutoUpdate 返回值。
   // 之前直接捕获 `u` 会让 60min interval 触发时读旧 status 闭包——例如用户已经

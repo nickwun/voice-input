@@ -40,7 +40,7 @@ export function AboutSection() {
             style={{ width: 56, height: 56, borderRadius: 13, boxShadow: '0 4px 10px rgba(0,0,0,.10), 0 0 0 0.5px rgba(0,0,0,.06)' }}
           />
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 17, fontWeight: 600 }}>OpenLess</div>
+            <div style={{ fontSize: 17, fontWeight: 600 }}>Voice Input</div>
             <div style={{ fontSize: 12, color: 'var(--ol-ink-3)', marginTop: 2 }}>
               {t('modal.about.tagline')} · {APP_VERSION_LABEL}
             </div>
@@ -56,17 +56,17 @@ export function AboutSection() {
       <Card>
         <SectionTitle>{t('settings.about.linksTitle')}</SectionTitle>
         <Row label={t('modal.about.source')}>
-          <button style={btnGhost} onClick={() => openExternal('https://github.com/appergb/openless')}>
+          <button style={btnGhost} onClick={() => openExternal('https://github.com/nickwun/voice-input')}>
             GitHub
           </button>
         </Row>
         <Row label={t('modal.about.docs')}>
-          <button style={btnGhost} onClick={() => openExternal('https://github.com/appergb/openless#readme')}>
+          <button style={btnGhost} onClick={() => openExternal('https://github.com/nickwun/voice-input#readme')}>
             {t('modal.about.docsBtn')}
           </button>
         </Row>
         <Row label={t('modal.about.feedback')}>
-          <button style={btnGhost} onClick={() => openExternal('https://github.com/appergb/openless/issues')}>
+          <button style={btnGhost} onClick={() => openExternal('https://github.com/nickwun/voice-input/issues')}>
             {t('modal.about.feedbackBtn')}
           </button>
         </Row>

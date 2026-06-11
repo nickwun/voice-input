@@ -5,7 +5,7 @@ import type { zhCN } from './zh-CN';
 
 export const zhTW: typeof zhCN = {
   app: {
-    name: 'OpenLess',
+    name: 'Voice Input',
     tagline: '自然說話，完美書寫',
   },
   common: {
@@ -208,7 +208,7 @@ export const zhTW: typeof zhCN = {
     },
   },
   onboarding: {
-    welcome: '歡迎使用 OpenLess',
+    welcome: '歡迎使用 Voice Input',
     intro: '本地說出，本地落字。開始前需要兩個系統權限。',
     accessibilityTitle: '輔助功能',
     hotkeyTitle: '全局快捷鍵',
@@ -221,8 +221,8 @@ export const zhTW: typeof zhCN = {
     actionOpenSystem: '打開系統設置',
     actionGrant: '授權',
     actionRequestMic: '彈出授權',
-    accessibilityHint: '授權後必須**完全退出 OpenLess** 再重新打開（macOS TCC 規則）。',
-    footerHint: '授權全部完成後此引導自動關閉。如果一直不消失，從菜單欄 OpenLess → 退出，重新打開 App。',
+    accessibilityHint: '授權後必須**完全退出 Voice Input** 再重新打開（macOS TCC 規則）。',
+    footerHint: '授權全部完成後此引導自動關閉。如果一直不消失，從菜單欄 Voice Input → 退出，重新打開 App。',
   },
   overview: {
     kicker: 'DASHBOARD',
@@ -416,7 +416,7 @@ export const zhTW: typeof zhCN = {
       fullPromptTitle: 'System Prompt',
       fullPromptHint: '這就是這套風格包自己的 Prompt。',
       promptChars: '{{count}} 字元',
-      runtimeTitle: 'OpenLess 執行時附加指令',
+      runtimeTitle: 'Voice Input 執行時附加指令',
       runtimeDesc: '只讀的執行時輔助項。',
       runtimeContextTitle: '上下文前提',
       runtimeContextDesc: '來自語言與應用上下文',
@@ -663,7 +663,7 @@ export const zhTW: typeof zhCN = {
       marketplaceDevLoginLabel: 'GitHub 使用者名稱（上傳身份）',
       marketplaceDevLoginDesc: '標識上傳者身分，為空時無法上傳或按讚。',
       startupAtBoot: '開機自啓',
-      startupAtBootDesc: '登錄系統時自動啓動 OpenLess。',
+      startupAtBootDesc: '登錄系統時自動啓動 Voice Input。',
       startupAtBootError: '開機自啓切換失敗：{{message}}',
     },
     providers: {
@@ -672,7 +672,7 @@ export const zhTW: typeof zhCN = {
       providerLabel: '供應商',
       llmProviderDesc: '選擇後將自動填入 Base URL 默認值。',
       credentialStorageNotice: '憑據保存在系統憑據庫中。',
-      codexOAuthNotice: 'Codex OAuth 使用本機 Codex 登入狀態（~/.codex/auth.json），無需在 OpenLess 中保存 API Key 或 Base URL。',
+      codexOAuthNotice: 'Codex OAuth 使用本機 Codex 登入狀態（~/.codex/auth.json），無需在 Voice Input 中保存 API Key 或 Base URL。',
       asrProviderDesc: '切換後將自動選用對應憑據。',
       asrTitle: 'ASR 語音（轉寫）',
       asrDesc: '用於將口述實時轉寫爲文本。',
@@ -764,7 +764,7 @@ export const zhTW: typeof zhCN = {
       cancel: '取消本次錄音',
       confirm: '膠囊確認插入',
       switchStyle: '切換到上一個風格',
-      openApp: '打開 OpenLess',
+      openApp: '打開 Voice Input',
       agentPolish: '選取文字潤色',
       agentPolishDesc: '選取文字 → 按鍵 → Claude 潤色 → 取代選取。',
       agentVoice: 'Less Computer',
@@ -778,8 +778,8 @@ export const zhTW: typeof zhCN = {
     },
     permissions: {
       title: '權限',
-      descAcc: 'OpenLess 需要以下系統權限才能正常工作。授權後通常需要完全退出 App 重啓一次才生效。',
-      descNoAcc: 'OpenLess 需要麥克風可用，並依賴全局快捷鍵監聽狀態判斷 native hook 是否正常工作。',
+      descAcc: 'Voice Input 需要以下系統權限才能正常工作。授權後通常需要完全退出 App 重啓一次才生效。',
+      descNoAcc: 'Voice Input 需要麥克風可用，並依賴全局快捷鍵監聽狀態判斷 native hook 是否正常工作。',
       micLabel: '麥克風',
       micDesc: '用於捕獲你的語音輸入。',
       accLabel: '輔助功能',
@@ -802,13 +802,13 @@ export const zhTW: typeof zhCN = {
       hotkeyStarting: '安裝中…',
       hotkeyFailed: '監聽失敗',
       windowsImeLabel: 'Windows 輸入法後端',
-      windowsImeDesc: '用於在語音會話期間臨時切換到 OpenLess TSF 輸入法，避免剪貼板插入限制。',
+      windowsImeDesc: '用於在語音會話期間臨時切換到 Voice Input TSF 輸入法，避免剪貼板插入限制。',
       windowsImeInstalled: '已安裝',
       windowsImeUnavailable: '不可用',
       windowsIme: {
-        installed: '已安裝。語音輸入時會臨時切換到 OpenLess 輸入法。',
-        notInstalled: '未安裝。OpenLess 正在使用剪貼板 / WM_PASTE 兜底。',
-        registrationBroken: '註冊已損壞。請重新安裝 OpenLess 輸入法。',
+        installed: '已安裝。語音輸入時會臨時切換到 Voice Input 輸入法。',
+        notInstalled: '未安裝。Voice Input 正在使用剪貼板 / WM_PASTE 兜底。',
+        registrationBroken: '註冊已損壞。請重新安裝 Voice Input 輸入法。',
         notWindows: '僅 Windows 可用。',
       },
     },
@@ -909,19 +909,19 @@ export const zhTW: typeof zhCN = {
       updateDialog: {
         available: {
           title: '發現新版本',
-          desc: '發現 OpenLess {{version}}，是否現在更新？',
+          desc: '發現 Voice Input {{version}}，是否現在更新？',
         },
         downloading: {
           title: '正在下載更新',
-          desc: '正在下載 OpenLess {{version}}，請保持應用打開。',
+          desc: '正在下載 Voice Input {{version}}，請保持應用打開。',
         },
         downloaded: {
           title: '更新已準備好',
-          desc: 'OpenLess {{version}} 已安裝完成。是否現在自動重啓以應用更新？',
+          desc: 'Voice Input {{version}} 已安裝完成。是否現在自動重啓以應用更新？',
         },
         installing: {
           title: '正在安裝更新',
-          desc: '正在安裝 OpenLess {{version}}，請保持應用打開。',
+          desc: '正在安裝 Voice Input {{version}}，請保持應用打開。',
         },
         install: '現在更新',
         downloadingLabel: '下載中…',

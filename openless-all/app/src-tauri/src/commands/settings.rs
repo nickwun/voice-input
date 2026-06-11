@@ -268,7 +268,7 @@ pub struct LatestBetaRelease {
 pub async fn fetch_latest_beta_release() -> Result<Option<LatestBetaRelease>, String> {
     let resp = net::send_with_retry(|| {
         net::http()
-            .get("https://github.com/appergb/openless/releases.atom")
+            .get("https://github.com/nickwun/voice-input/releases.atom")
             .timeout(std::time::Duration::from_secs(15))
     })
     .await
@@ -305,7 +305,7 @@ pub(crate) fn parse_latest_beta_from_atom(body: &str) -> Option<LatestBetaReleas
         if !tag_name.ends_with("-beta-tauri") {
             continue;
         }
-        let html_url = format!("https://github.com/appergb/openless/releases/tag/{tag_name}");
+        let html_url = format!("https://github.com/nickwun/voice-input/releases/tag/{tag_name}");
         let published_at =
             extract_between(entry_body, "<updated>", "</updated>").unwrap_or_default();
         return Some(LatestBetaRelease {
@@ -408,13 +408,9 @@ async fn resolve_beta_manifest_endpoints() -> Result<Vec<url::Url>, String> {
     let tag = latest.tag_name;
     // {{target}} / {{arch}} 占位符由 plugin 在 check 时替换。Rust raw string 用 r#""#
     // 不需要转义双花括号，比 format! 干净。
-    let mirror = format!(
-        "https://fastgit.cc/https://github.com/appergb/openless/releases/download/{tag}/latest-{{{{target}}}}-{{{{arch}}}}-beta-mirror.json"
-    );
     let direct = format!(
-        "https://github.com/appergb/openless/releases/download/{tag}/latest-{{{{target}}}}-{{{{arch}}}}-beta.json"
+        "https://github.com/nickwun/voice-input/releases/download/{tag}/latest-{{{{target}}}}-{{{{arch}}}}-beta.json"
     );
-    let mirror_url = url::Url::parse(&mirror).map_err(|e| format!("parse beta mirror url: {e}"))?;
     let direct_url = url::Url::parse(&direct).map_err(|e| format!("parse beta direct url: {e}"))?;
-    Ok(vec![mirror_url, direct_url])
+    Ok(vec![direct_url])
 }

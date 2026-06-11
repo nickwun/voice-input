@@ -180,9 +180,9 @@ export function ProvidersSection() {
   //   - CredentialField 不要在后端 active 切完前 remount（issue #219：避免读到旧 entry）
   // `*SwitchSeq` 是 stale-write 守卫：用户 100ms 内连点两次时，先发的请求晚到不
   // 会覆盖后发的 commit。
-  const [llmProvider, setLlmProvider] = useState<LlmPresetId>('ark');
+  const [llmProvider, setLlmProvider] = useState<LlmPresetId>('deepseek');
   const [asrProvider, setAsrProvider] = useState<AsrPresetId>('volcengine');
-  const [committedLlmProvider, setCommittedLlmProvider] = useState<LlmPresetId>('ark');
+  const [committedLlmProvider, setCommittedLlmProvider] = useState<LlmPresetId>('deepseek');
   const [committedAsrProvider, setCommittedAsrProvider] = useState<AsrPresetId>('volcengine');
   const llmSwitchSeqRef = useRef(0);
   const asrSwitchSeqRef = useRef(0);

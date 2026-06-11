@@ -7,7 +7,7 @@ import { en } from './en';
 export const ja: typeof zhCN = {
   ...en,
   app: {
-    name: 'OpenLess',
+    name: 'Voice Input',
     tagline: '自然に話し、きれいに書く',
   },
   common: {
@@ -210,7 +210,7 @@ export const ja: typeof zhCN = {
     },
   },
   onboarding: {
-    welcome: 'OpenLess へようこそ',
+    welcome: 'Voice Input へようこそ',
     intro: 'ローカルで話し、ローカルで文字に。開始前にシステム権限が 2 つ必要です。',
     accessibilityTitle: 'アクセシビリティ',
     hotkeyTitle: 'グローバルショートカット',
@@ -223,8 +223,8 @@ export const ja: typeof zhCN = {
     actionOpenSystem: 'システム設定を開く',
     actionGrant: '許可する',
     actionRequestMic: '許可ダイアログを表示',
-    accessibilityHint: '許可後は **OpenLess を完全に終了** してから再起動してください（macOS TCC の仕様）。',
-    footerHint: 'すべての権限が揃うとこのガイドは自動で閉じます。閉じない場合はメニューバーの OpenLess → 終了 から再起動してください。',
+    accessibilityHint: '許可後は **Voice Input を完全に終了** してから再起動してください（macOS TCC の仕様）。',
+    footerHint: 'すべての権限が揃うとこのガイドは自動で閉じます。閉じない場合はメニューバーの Voice Input → 終了 から再起動してください。',
   },
   overview: {
     kicker: 'DASHBOARD',
@@ -418,7 +418,7 @@ export const ja: typeof zhCN = {
       fullPromptTitle: 'System Prompt',
       fullPromptHint: 'このパック固有の Prompt です。',
       promptChars: '{{count}} 文字',
-      runtimeTitle: 'OpenLess 実行時付加指令',
+      runtimeTitle: 'Voice Input 実行時付加指令',
       runtimeDesc: '読み取り専用の実行時ヘルパー。',
       runtimeContextTitle: 'コンテキスト前提',
       runtimeContextDesc: '言語とアプリのコンテキストから',
@@ -665,7 +665,7 @@ export const ja: typeof zhCN = {
       marketplaceDevLoginLabel: 'GitHub ログイン名（アップロード ID）',
       marketplaceDevLoginDesc: 'アップロード者を識別。空欄でアップロード・いいね無効。',
       startupAtBoot: '起動時に自動起動',
-      startupAtBootDesc: 'ログイン時に OpenLess を自動起動。',
+      startupAtBootDesc: 'ログイン時に Voice Input を自動起動。',
       startupAtBootError: '自動起動の切り替えに失敗：{{message}}',
     },
     providers: {
@@ -674,7 +674,7 @@ export const ja: typeof zhCN = {
       providerLabel: 'サプライヤー',
       llmProviderDesc: '選択するとデフォルトの Base URL が自動入力されます。',
       credentialStorageNotice: '資格情報は OS の資格情報ストアに保存されます。',
-      codexOAuthNotice: 'Codex OAuth はローカルの Codex ログイン状態（~/.codex/auth.json）を使用します。OpenLess は API Key や Base URL を保存しません。',
+      codexOAuthNotice: 'Codex OAuth はローカルの Codex ログイン状態（~/.codex/auth.json）を使用します。Voice Input は API Key や Base URL を保存しません。',
       asrProviderDesc: '切り替えると対応する認証情報が自動選択されます。',
       asrTitle: 'ASR 音声（転写）',
       asrDesc: '口述をリアルタイムでテキストに転写。',
@@ -766,7 +766,7 @@ export const ja: typeof zhCN = {
       cancel: '本回の録音をキャンセル',
       confirm: 'カプセル入力を確定',
       switchStyle: '前のスタイルに切り替え',
-      openApp: 'OpenLess を開く',
+      openApp: 'Voice Input を開く',
       agentPolish: '選択テキストを推敲',
       agentPolishDesc: 'テキスト選択 → キー → Claude が推敲 → 選択範囲を置換。',
       agentVoice: 'Less Computer',
@@ -780,8 +780,8 @@ export const ja: typeof zhCN = {
     },
     permissions: {
       title: '権限',
-      descAcc: 'OpenLess は正常動作のため以下のシステム権限が必要です。許可後は通常、App を完全に終了して再起動する必要があります。',
-      descNoAcc: 'OpenLess はマイクへのアクセスと、グローバルショートカット監視状態を通じてネイティブフックの正常動作を判定する必要があります。',
+      descAcc: 'Voice Input は正常動作のため以下のシステム権限が必要です。許可後は通常、App を完全に終了して再起動する必要があります。',
+      descNoAcc: 'Voice Input はマイクへのアクセスと、グローバルショートカット監視状態を通じてネイティブフックの正常動作を判定する必要があります。',
       micLabel: 'マイク',
       micDesc: '音声入力の取得に使用します。',
       accLabel: 'アクセシビリティ',
@@ -804,13 +804,13 @@ export const ja: typeof zhCN = {
       hotkeyStarting: 'インストール中…',
       hotkeyFailed: '監視失敗',
       windowsImeLabel: 'Windows 入力メソッドバックエンド',
-      windowsImeDesc: '音声セッション中に OpenLess TSF IME へ一時的に切り替え、クリップボード入力の制限を回避します。',
+      windowsImeDesc: '音声セッション中に Voice Input TSF IME へ一時的に切り替え、クリップボード入力の制限を回避します。',
       windowsImeInstalled: 'インストール済み',
       windowsImeUnavailable: '利用不可',
       windowsIme: {
-        installed: 'インストール済み。音声入力時に OpenLess IME へ一時的に切り替えます。',
-        notInstalled: '未インストール。OpenLess は現在クリップボード / WM_PASTE フォールバックを使用しています。',
-        registrationBroken: '登録が破損しています。OpenLess IME を再インストールしてください。',
+        installed: 'インストール済み。音声入力時に Voice Input IME へ一時的に切り替えます。',
+        notInstalled: '未インストール。Voice Input は現在クリップボード / WM_PASTE フォールバックを使用しています。',
+        registrationBroken: '登録が破損しています。Voice Input IME を再インストールしてください。',
         notWindows: 'Windows のみ利用可能。',
       },
     },
@@ -911,19 +911,19 @@ export const ja: typeof zhCN = {
       updateDialog: {
         available: {
           title: '新しいバージョンがあります',
-          desc: 'OpenLess {{version}} が見つかりました。今すぐ更新しますか？',
+          desc: 'Voice Input {{version}} が見つかりました。今すぐ更新しますか？',
         },
         downloading: {
           title: 'アップデートをダウンロード中',
-          desc: 'OpenLess {{version}} をダウンロード中です。アプリを開いたままにしてください。',
+          desc: 'Voice Input {{version}} をダウンロード中です。アプリを開いたままにしてください。',
         },
         downloaded: {
           title: 'アップデートの準備完了',
-          desc: 'OpenLess {{version}} のインストールが完了しました。今すぐ自動再起動して適用しますか？',
+          desc: 'Voice Input {{version}} のインストールが完了しました。今すぐ自動再起動して適用しますか？',
         },
         installing: {
           title: 'アップデートをインストール中',
-          desc: 'OpenLess {{version}} をインストール中です。アプリを開いたままにしてください。',
+          desc: 'Voice Input {{version}} をインストール中です。アプリを開いたままにしてください。',
         },
         install: '今すぐ更新',
         downloadingLabel: 'ダウンロード中…',

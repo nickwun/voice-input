@@ -416,6 +416,17 @@ fn resolve_ark_endpoint_allows_blank_key_with_custom_endpoint() {
     assert_eq!(endpoint, "https://example.com/v1/chat/completions");
 }
 
+#[test]
+fn resolve_llm_endpoint_defaults_to_active_provider_endpoint() {
+    let endpoint = resolve_llm_endpoint_with_policy(
+        "sk-test",
+        None,
+        "https://api.deepseek.com/v1/chat/completions",
+    )
+    .unwrap();
+    assert_eq!(endpoint, "https://api.deepseek.com/v1/chat/completions");
+}
+
 // ───────── issue #609 F-01：SSRF endpoint 校验 ─────────
 
 #[test]

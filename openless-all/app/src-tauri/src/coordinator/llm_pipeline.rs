@@ -706,8 +706,8 @@ pub(crate) fn build_active_llm_provider(
     }
 
     let api_key = CredentialsVault::get(CredentialAccount::ArkApiKey)?.unwrap_or_default();
-    let model = model.unwrap_or_else(|| "deepseek-v3-2".to_string());
-    let endpoint = resolve_ark_endpoint(&api_key)?;
+    let model = model.unwrap_or_else(|| default_llm_model(&active).to_string());
+    let endpoint = resolve_llm_endpoint(&active, &api_key)?;
     let base_url = endpoint
         .trim_end_matches("/chat/completions")
         .trim_end_matches('/')
@@ -719,20 +719,63 @@ pub(crate) fn build_active_llm_provider(
     )))
 }
 
-pub(crate) fn resolve_ark_endpoint(api_key: &str) -> anyhow::Result<String> {
+fn default_llm_endpoint(provider_id: &str) -> &'static str {
+    match provider_id {
+        "deepseek" => "https://api.deepseek.com/v1/chat/completions",
+        "siliconflow" => "https://api.siliconflow.cn/v1/chat/completions",
+        "openai" => "https://api.openai.com/v1/chat/completions",
+        "gemini" => "https://generativelanguage.googleapis.com/v1",
+        "mimo" => "https://api.xiaomimimo.com/v1/chat/completions",
+        "cometapi" => "https://api.cometapi.com/v1/chat/completions",
+        "openrouterFree" => "https://openrouter.ai/api/v1/chat/completions",
+        "alibabaCoding" => "https://coding-intl.dashscope.aliyuncs.com/v1/chat/completions",
+        "codingPlanX" => "https://api.codingplanx.ai/v1/chat/completions",
+        "minimax" => "https://api.minimaxi.com/v1/chat/completions",
+        _ => "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
+    }
+}
+
+fn default_llm_model(provider_id: &str) -> &'static str {
+    match provider_id {
+        "deepseek" => "deepseek-v4-flash",
+        "gemini" => "gemini-2.5-flash",
+        "openai" => "gpt-4o",
+        "siliconflow" => "Qwen/Qwen2.5-7B-Instruct",
+        "mimo" => "xiaomi/mimo-v2-flash",
+        "cometapi" => "gpt-4o",
+        "openrouterFree" => "qwen/qwen3-coder:free",
+        "alibabaCoding" => "qwen3-coder-plus",
+        "codingPlanX" => "gpt-5-mini",
+        "minimax" => "MiniMax-M3",
+        _ => "deepseek-v3-2",
+    }
+}
+
+pub(crate) fn resolve_llm_endpoint(provider_id: &str, api_key: &str) -> anyhow::Result<String> {
     let endpoint = CredentialsVault::get(CredentialAccount::ArkEndpoint)?.filter(|s| !s.is_empty());
-    resolve_ark_endpoint_with_policy(api_key, endpoint)
+    resolve_llm_endpoint_with_policy(api_key, endpoint, default_llm_endpoint(provider_id))
 }
 
 pub(crate) fn resolve_ark_endpoint_with_policy(
     api_key: &str,
     endpoint: Option<String>,
 ) -> anyhow::Result<String> {
+    resolve_llm_endpoint_with_policy(
+        api_key,
+        endpoint,
+        "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
+    )
+}
+
+pub(crate) fn resolve_llm_endpoint_with_policy(
+    api_key: &str,
+    endpoint: Option<String>,
+    default_endpoint: &str,
+) -> anyhow::Result<String> {
     if api_key.trim().is_empty() && endpoint.is_none() {
         anyhow::bail!("API Key 为空");
     }
-    let mut resolved = endpoint
-        .unwrap_or_else(|| "https://ark.cn-beijing.volces.com/api/v3/chat/completions".to_string());
+    let mut resolved = endpoint.unwrap_or_else(|| default_endpoint.to_string());
     // 兜底：用户可能在自定义 endpoint 时只写了 "192.168.1.100:8080/v1" 漏了 scheme，
     // 被 reqwest::IntoUrl 自动补 https:// 后对纯 HTTP 的 llama.cpp 发请求会 TLS 握手失败。
     // 检测到无 scheme 时自动补 http://（局域网自托管服务最常见的形态）。

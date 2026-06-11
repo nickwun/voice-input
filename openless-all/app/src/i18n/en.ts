@@ -5,7 +5,7 @@ import type { zhCN } from './zh-CN';
 // Type-level guarantee that en mirrors the zh-CN shape.
 export const en: typeof zhCN = {
   app: {
-    name: 'OpenLess',
+    name: 'Voice Input',
     tagline: 'Speak naturally, write perfectly',
   },
   common: {
@@ -208,7 +208,7 @@ export const en: typeof zhCN = {
     },
   },
   onboarding: {
-    welcome: 'Welcome to OpenLess',
+    welcome: 'Welcome to Voice Input',
     intro: 'Speak locally, type locally. Two system permissions are needed before you start.',
     accessibilityTitle: 'Accessibility',
     hotkeyTitle: 'Global hotkey',
@@ -221,8 +221,8 @@ export const en: typeof zhCN = {
     actionOpenSystem: 'Open System Settings',
     actionGrant: 'Grant',
     actionRequestMic: 'Request access',
-    accessibilityHint: 'After granting, you must **fully quit OpenLess** and reopen it (a macOS TCC requirement).',
-    footerHint: 'This onboarding closes automatically once both permissions are granted. If it persists, quit OpenLess from the menu bar and relaunch.',
+    accessibilityHint: 'After granting, you must **fully quit Voice Input** and reopen it (a macOS TCC requirement).',
+    footerHint: 'This onboarding closes automatically once both permissions are granted. If it persists, quit Voice Input from the menu bar and relaunch.',
   },
   overview: {
     kicker: 'DASHBOARD',
@@ -416,7 +416,7 @@ export const en: typeof zhCN = {
       fullPromptTitle: 'System Prompt',
       fullPromptHint: 'The prompt owned by this pack.',
       promptChars: '{{count}} chars',
-      runtimeTitle: 'OpenLess Runtime Directives',
+      runtimeTitle: 'Voice Input Runtime Directives',
       runtimeDesc: 'Read-only runtime helpers.',
       runtimeContextTitle: 'Context premise',
       runtimeContextDesc: 'From language and app context',
@@ -663,7 +663,7 @@ export const en: typeof zhCN = {
       marketplaceDevLoginLabel: 'GitHub login (upload identity)',
       marketplaceDevLoginDesc: 'Identifies the uploader. Blank disables upload and likes.',
       startupAtBoot: 'Launch at login',
-      startupAtBootDesc: 'Start OpenLess automatically when you sign in.',
+      startupAtBootDesc: 'Start Voice Input automatically when you sign in.',
       startupAtBootError: 'Failed to toggle launch at login: {{message}}',
     },
     providers: {
@@ -672,7 +672,7 @@ export const en: typeof zhCN = {
       providerLabel: 'Provider',
       llmProviderDesc: 'Selecting a preset auto-fills the default Base URL.',
       credentialStorageNotice: 'Credentials are stored in the OS credential vault.',
-      codexOAuthNotice: 'Codex OAuth uses the local Codex login state (~/.codex/auth.json). OpenLess does not store an API key or Base URL for this provider.',
+      codexOAuthNotice: 'Codex OAuth uses the local Codex login state (~/.codex/auth.json). Voice Input does not store an API key or Base URL for this provider.',
       asrProviderDesc: 'Switching providers automatically loads the matching credentials.',
       asrTitle: 'ASR (transcription)',
       asrDesc: 'Used to turn speech into text in real time.',
@@ -764,7 +764,7 @@ export const en: typeof zhCN = {
       cancel: 'Cancel current recording',
       confirm: 'Confirm capsule insertion',
       switchStyle: 'Switch to previous style',
-      openApp: 'Open OpenLess',
+      openApp: 'Open Voice Input',
       agentPolish: 'Polish selected text',
       agentPolishDesc: 'Select text → press → Claude polishes it → replaces the selection.',
       agentVoice: 'Less Computer',
@@ -778,8 +778,8 @@ export const en: typeof zhCN = {
     },
     permissions: {
       title: 'Permissions',
-      descAcc: 'OpenLess needs the following system permissions to work. After granting, fully quit and relaunch the app for changes to take effect.',
-      descNoAcc: 'OpenLess needs microphone access and uses the global hotkey listener state to verify the native hook is running.',
+      descAcc: 'Voice Input needs the following system permissions to work. After granting, fully quit and relaunch the app for changes to take effect.',
+      descNoAcc: 'Voice Input needs microphone access and uses the global hotkey listener state to verify the native hook is running.',
       micLabel: 'Microphone',
       micDesc: 'Used to capture your voice input.',
       accLabel: 'Accessibility',
@@ -802,13 +802,13 @@ export const en: typeof zhCN = {
       hotkeyStarting: 'Installing…',
       hotkeyFailed: 'Listener failed',
       windowsImeLabel: 'Windows input method backend',
-      windowsImeDesc: 'Temporarily switches to the OpenLess TSF IME during voice sessions to avoid clipboard insertion limits.',
+      windowsImeDesc: 'Temporarily switches to the Voice Input TSF IME during voice sessions to avoid clipboard insertion limits.',
       windowsImeInstalled: 'Installed',
       windowsImeUnavailable: 'Unavailable',
       windowsIme: {
-        installed: 'Installed. Voice input temporarily switches to the OpenLess IME.',
-        notInstalled: 'Not installed. OpenLess is using the clipboard/WM_PASTE fallback.',
-        registrationBroken: 'Registration is broken. Reinstall the OpenLess IME.',
+        installed: 'Installed. Voice input temporarily switches to the Voice Input IME.',
+        notInstalled: 'Not installed. Voice Input is using the clipboard/WM_PASTE fallback.',
+        registrationBroken: 'Registration is broken. Reinstall the Voice Input IME.',
         notWindows: 'Only available on Windows.',
       },
     },
@@ -909,19 +909,19 @@ export const en: typeof zhCN = {
       updateDialog: {
         available: {
           title: 'Update available',
-          desc: 'OpenLess {{version}} is available. Update now?',
+          desc: 'Voice Input {{version}} is available. Update now?',
         },
         downloading: {
           title: 'Downloading update',
-          desc: 'Downloading OpenLess {{version}}. Keep the app open.',
+          desc: 'Downloading Voice Input {{version}}. Keep the app open.',
         },
         downloaded: {
           title: 'Update ready',
-          desc: 'OpenLess {{version}} has been installed. Restart automatically now to apply it?',
+          desc: 'Voice Input {{version}} has been installed. Restart automatically now to apply it?',
         },
         installing: {
           title: 'Installing update',
-          desc: 'Installing OpenLess {{version}}. Keep the app open.',
+          desc: 'Installing Voice Input {{version}}. Keep the app open.',
         },
         install: 'Update now',
         downloadingLabel: 'Downloading…',
@@ -1015,7 +1015,7 @@ export const en: typeof zhCN = {
     storageChoose: 'Change folder',
     storageReset: 'Reset to default',
     storageReveal: 'Open models folder',
-    storageDesc: 'Custom storage creates OpenLess/models under the selected folder and migrates existing models. OpenLess cancels downloads and releases loaded models before moving files.',
+    storageDesc: 'Custom storage creates OpenLess/models under the selected folder and migrates existing models. Voice Input cancels downloads and releases loaded models before moving files.',
     storageChooseTitle: 'Choose local model storage parent folder',
     storageChangeConfirm: 'Existing local models will be moved to {{path}}/OpenLess/models. Downloads will be cancelled and loaded models released first. Continue?',
     storageResetConfirm: 'Existing local models will be moved back to the system default folder. Current folder: {{path}}. Continue?',
