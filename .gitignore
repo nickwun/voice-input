@@ -1,26 +1,84 @@
-# macOS
 .DS_Store
-
-# Xcode
-DerivedData/
-*.xcuserstate
-xcuserdata/
-*.moved-aside
-*.xccheckout
-*.xcscmblueprint
-
-# Swift Package Manager
 .build/
+build/
 .swiftpm/
+*.xcodeproj
 Package.resolved
+xcuserdata/
+DerivedData/
+ChatGPT Image*.jpg
 
-# Secrets and local config
-.env
-.env.*
-*.local
+# Local config / secrets
+*.env
+config.local.json
+# Tauri updater 签名私钥（绝不上传 — 公钥在 tauri.conf.json，私钥放 GitHub Secret）
+*.key
+*.key.pub
+密钥对.zip
+密钥对/
 
-# Logs
-*.log
-
-# Local git worktrees
+# Local working dirs that don't belong in the repo
+SC/
+apps/
+promo/
+promo-openless/
+promo-openless-v2/
+docs/old-promo/
 .worktrees/
+# 宣传录屏 / 素材根目录（GB 级二进制，绝不入版本库）
+video-materials/
+
+# 派生产物（兜底）：项目曾出现 promo-openless-v2/node_modules 等遗漏，
+# 这里全局通配，避免某子目录漏配 .gitignore 时把 build artifact 推进 PR。
+node_modules/
+dist/
+target/
+.cargo/registry/
+.cargo/git/
+
+# Windows TSF IME local build outputs
+openless-all/app/windows-ime/OpenLessIme/
+openless-all/app/windows-ime/x64/
+openless-all/app/windows-ime/Win32/
+openless-all/app/windows-ime/Release/
+openless-all/app/windows-ime/obj/
+
+# Planning docs are kept local only, not published to the public repo.
+docs/plans/
+
+# Internal AI 协作 + 规划 + 审计文档：本地保留，绝不发布到公共仓库。
+# 之前误入库的整套已在 chore/remove-internal-docs 中 git rm --cached，
+# 这里加规则避免再次被 `git add` 拉回来。
+
+# 根目录 AI 协作指南
+/CLAUDE.md
+/AGENTS.md
+/issue-*-plan.md
+
+# .github 内部协作 + 审计报告（ISSUE_TEMPLATE / workflows / pr template 仍保留发布）
+.github/COOPER_*.md
+.github/BUILD_TEST_REPORT.md
+.github/MULTI_SCALE_AUDIT.md
+.github/P1_TEST_REPORT.md
+.github/TEST_VERIFICATION.md
+.github/WATCHDOG_RISK_ANALYSIS.md
+.github/audit-reports/
+.github/finding-reports/
+.github/issues/EPIC-*.md
+
+# docs/ 下的规划 / 审计 / 内部 tracking（用户文档如 volcengine-setup / tauri-csp 保留）
+docs/audit-*.md
+docs/logic-review-*.md
+docs/qa-reasoning-roadmap.md
+docs/style-pack-marketplace.md
+docs/auto-update-download-acceleration.md
+docs/2026-*-investigation.md
+docs/*-research.md
+docs/windows-upstream-pr-workflow.md
+docs/github-tracking/
+docs/superpowers/
+docs/windows-lifecycle-tracking/
+docs/windows-ui-tracking/
+
+# 用于本地语音推理的参考文件。
+CapsWriter
