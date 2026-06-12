@@ -358,11 +358,11 @@ export function ProvidersSection() {
           <>
             <CredentialField key={`${committedLlmProvider}:api_key`} label={t('settings.providers.apiKeyLabel')} account="ark.api_key" mono mask />
             <CredentialField key={`${committedLlmProvider}:endpoint`} label={t('settings.providers.baseUrlLabel')} account="ark.endpoint"
-              placeholder={preset.baseUrl || 'https://your-endpoint/v1'} />
+              placeholder={preset.baseUrl || 'https://your-endpoint/v1'} defaultValue={preset.baseUrl || undefined} />
           </>
         )}
         <CredentialField key={`${committedLlmProvider}:model:${llmModelRevision}`} label={t('settings.providers.modelLabel')} account="ark.model_id"
-          placeholder={preset.modelPlaceholder || 'model-name'} mono
+          placeholder={preset.modelPlaceholder || 'model-name'} defaultValue={preset.modelPlaceholder || undefined} mono
           trailing={(
             <LlmThinkingToggle
               enabled={prefs?.llmThinkingEnabled ?? false}
@@ -471,7 +471,7 @@ export function ProvidersSection() {
               placeholder={asrPreset?.baseUrl || 'https://api.openai.com/v1'}
               defaultValue={asrPreset?.baseUrl || undefined} />
             <CredentialField key={`${committedAsrProvider}:model:${asrModelRevision}`} label={t('settings.providers.modelLabel')} account="asr.model"
-              placeholder={asrPreset?.model || 'whisper-1'} />
+              placeholder={asrPreset?.model || 'whisper-1'} defaultValue={asrPreset?.model || undefined} />
             {committedAsrProvider === 'bailian' && (
               <>
                 <CredentialField
@@ -642,9 +642,23 @@ function CredentialField({ label, account, placeholder, mono, mask, defaultValue
       debounceRef.current = null;
     }
     readCredential(account)
-      .then(v => {
+      .then(async v => {
         if (cancelled) return;
-        setValue(v ?? '');
+        const nextValue = v ?? '';
+        if (!nextValue && defaultValue) {
+          setValue(defaultValue);
+          setLoaded(true);
+          try {
+            await setCredential(account, defaultValue);
+            if (!cancelled) showTemporaryStatus('saved');
+          } catch (error) {
+            if (cancelled) return;
+            console.error('[settings] failed to save default credential', account, error);
+            setStatus('saveError');
+          }
+          return;
+        }
+        setValue(nextValue);
         setLoaded(true);
       })
       .catch(error => {
@@ -656,7 +670,7 @@ function CredentialField({ label, account, placeholder, mono, mask, defaultValue
     return () => {
       cancelled = true;
     };
-  }, [account]);
+  }, [account, defaultValue]);
 
   useEffect(() => {
     mountedRef.current = true;
